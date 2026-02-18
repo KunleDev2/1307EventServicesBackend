@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-async function sendContactEmail({ name, email, message}) {
+async function sendContactEmail({ name, email, eventDate, inquiry, message}) {
     return transporter.sendMail({
   from: '"Website Contact" <no-reply@>',
   to: "kunleoshodi856@gmail.com",
@@ -67,6 +67,22 @@ async function sendContactEmail({ name, email, message}) {
                     <td style="padding-bottom:12px;">
                       <strong style="color:#111827;">Email:</strong><br/>
                       <span style="color:#374151;">${email}</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="padding-bottom:12px;">
+                      <strong style="color:#111827;">Event Date:</strong><br/>
+                      <span style="color:#374151;">${eventDate}</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong style="color:#111827;">Inquiry:</strong><br/>
+                      <span style="color:#374151;line-height:1.6;">
+                        ${inquiry}
+                      </span>
                     </td>
                   </tr>
 
