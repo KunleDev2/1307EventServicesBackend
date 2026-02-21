@@ -3,6 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const { encrypt, decrypt } = require("./crypto");
 const { sendContactEmail } = require("./emailService");
+const PORT = process.env.PORT || 5000;
 const axios = require("axios");
 
 const app = express();
@@ -66,6 +67,6 @@ app.post("/api/chat", async (req, res) => {
     }
 })
 
-app.listen(5000, () => {
-    console.log("Secure server running on port 5000");
-})
+app.listen(PORT, () => {
+    console.log(`Secure server running on port ${PORT}`);
+});
